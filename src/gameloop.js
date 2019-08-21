@@ -7,8 +7,10 @@ function loop(time) {
   var refreshRatio = dt/1000;
   timeEnd = time;
   
-  requestAnimationFrame(loop);
+  sceneManager_draw()
+  sceneManager_update()
 
+  requestAnimationFrame(loop);
   if(DEBUG){}
 }
 

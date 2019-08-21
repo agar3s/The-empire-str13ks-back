@@ -51,7 +51,7 @@ fi;
 #cat src/canvasRenderer.js
 #cat src/webglRenderer.js
 #cat src/effects.js
-#cat src/scene.js
+cat src/scene_manager.js
 #cat src/gameSetup.js
 #cat src/gameHud.js
 #cat src/levelUpScene.js
