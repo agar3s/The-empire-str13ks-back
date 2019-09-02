@@ -18,8 +18,8 @@ function sceneManager_draw() {
 }
 
 /**
- * Some class, initialized with a value.
- * @constructor
+ * Scene object
+
  */
 function Scene() {
 

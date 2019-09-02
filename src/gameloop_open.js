@@ -1,0 +1,37 @@
+// src/gameLoop.js >>>
+
+var timeEnd = 0;
+var metronomeTime = 0;
+var bpm = 136;
+var beatInterval = 60.0 / bpm;
+var sixteenthTime = beatInterval / 16;
+var currentBeat = 0;
+var currentTick = 0;
+var tickEvent = false;
+var beatEvent = false;
+
+function loop(time) {
+  if(DEBUG){}
+  var dt = time - timeEnd;
+  var refreshRatio = dt/1000;
+  timeEnd = time;
+  
+  // metronome
+  if (time > 2000) {
+    metronomeTime += refreshRatio;
+    var nextBeat = ~~((metronomeTime+refreshRatio/2)/sixteenthTime)
+    tickEvent = nextBeat != 0;
+    currentTick += nextBeat;
+    beatEvent = currentTick >= 16;
+    if (beatEvent) {
+      currentTick = 0;
+      currentBeat += 1;
+    }
+
+    if (nextBeat >= 1) {
+      metronomeTime = metronomeTime - (nextBeat * sixteenthTime);
+    }
+  }
+
+
+

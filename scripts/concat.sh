@@ -20,7 +20,7 @@ fi;
 #cat lib/jsfxr.js
 #cat lib/audio.js
 #cat lib/webgl.js
-#cat lib/keyboardController.js
+cat lib/keyboard.js
 
 # shaders
 #cd dist;
@@ -35,7 +35,6 @@ fi;
 #cat src/generatedSprites.js
 #cat src/theScript.js
 #cat src/spriteLoader.js
-#cat src/gameObject.js
 #cat src/items.js
 #cat src/fighter.js
 #cat src/font.js
@@ -48,12 +47,18 @@ fi;
 #cat src/fighterController.js
 #cat src/player.js
 
-#cat src/canvasRenderer.js
+cat src/canvasRender.js
 #cat src/webglRenderer.js
 #cat src/effects.js
-cat src/scene_manager.js
+#cat src/scene_manager.js
 #cat src/gameSetup.js
 #cat src/gameHud.js
 #cat src/levelUpScene.js
-cat src/gameloop.js
+
+cat src/gameObjects.js
+cat src/gameloop_open.js
+
+cat src/scenes/obstaclesGame.js
+
+cat src/gameloop_close.js
 cat src/post.js
