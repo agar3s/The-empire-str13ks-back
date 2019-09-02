@@ -2,13 +2,17 @@
 
 var timeEnd = 0;
 var metronomeTime = 0;
-var bpm = 136;
+var bpm = 120;
 var beatInterval = 60.0 / bpm;
 var sixteenthTime = beatInterval / 16;
 var currentBeat = 0;
 var currentTick = 0;
 var tickEvent = false;
 var beatEvent = false;
+
+var screenIndex = 0;
+var lives = 0;
+var level = 1;
 
 function loop(time) {
   if(DEBUG){}
@@ -33,5 +37,6 @@ function loop(time) {
     }
   }
 
+  graphics.clearRect(0, 0, canvas_width, canvas_height);
 
 

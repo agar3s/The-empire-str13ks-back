@@ -58,7 +58,20 @@ cat src/canvasRender.js
 cat src/gameObjects.js
 cat src/gameloop_open.js
 
-cat src/scenes/obstaclesGame.js
+cat src/scenes/mainScreen.js
+cat src/scenes/_01_obstacles.js
+cat src/scenes/_02_force.js
+cat src/scenes/_03_slash.js
+cat src/scenes/_04_equilibrium.js
+cat src/scenes/_05_catch.js
+cat src/scenes/_06_shoot.js
+cat src/scenes/_07_destroy.js
+cat src/scenes/_08_scream.js
+cat src/scenes/_09_deflect.js
+cat src/scenes/_10_pullDown.js
+cat src/scenes/_11_escape.js
+cat src/scenes/_12_swing.js
+cat src/scenes/_13_protect.js
 
 cat src/gameloop_close.js
 cat src/post.js
