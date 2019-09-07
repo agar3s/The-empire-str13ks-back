@@ -35,5 +35,4 @@ else if(screenIndex == 1){
   graphics.fillStyle = beatEvent?'#0ff':currentTick<4?'#0ff':'#fff';
   graphics.fillRect(luke[0], luke[1] - 20, 20, 20);
 
-
 }

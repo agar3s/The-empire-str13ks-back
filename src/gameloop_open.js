@@ -10,7 +10,6 @@ var currentTick = 0;
 var tickEvent = false;
 var beatEvent = false;
 
-var screenIndex = 1;
 var lives = 0;
 var level = 1;
 

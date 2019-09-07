@@ -1,12 +1,12 @@
 
 const GAME_TIME = 18;
-const NEXT_SCREEN = 1;
+const NEXT_SCREEN = 9;
 const FLOOR = 120;
 const MAX_Y_ACCELERATION = 5;
 const gravity = 18;
 
 // game data
-var screenIndex = 0;
+var screenIndex = 9;
 var lives = 0;
 var level = 1;
 
@@ -20,7 +20,7 @@ var luke = [100, FLOOR, 0, 0, false];
 
 // main screen data
 var countdown = 3;
-var nextScreen = 1;
+var nextScreen = 9;
 var refreshRatio = 0;
 
 // objects translated in game 1
@@ -28,6 +28,12 @@ var obstacles = [];
 
 // press counter game 2
 
+function generateObstacles(n, distance, probs) {
+  obstacles = [];
+  for (var i = 0; i < n; i++) {
+    obstacles.push([380 + distance*i, 90+(Math.random()>probs?1:0)*30]);
+  }
+}
 
 
 function changeScreen(screen) {
@@ -38,10 +44,8 @@ function changeScreen(screen) {
     nextScreen = NEXT_SCREEN || (~~(Math.random()*13) + 1);
   }else if(screen == 1){
     luke = [100, FLOOR, 0, 0, false];
-    obstacles = [];
-    for (var i = 0; i < 12; i++) {
-      obstacles.push([380 + 200*i, 90+(Math.random()>0.2?1:0)*30]);
-    }
+    generateObstacles(12, 200, 0.2);
+    
   }else if(screen == 2){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 3){
@@ -57,7 +61,8 @@ function changeScreen(screen) {
   }else if(screen == 8){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 9){
-    luke = [0, FLOOR, 0, 0, false];
+    luke = [1, FLOOR, 0, 0, false];
+    generateObstacles(30, 250, 0.5);
   }else if(screen == 10){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 11){
