@@ -9,4 +9,21 @@
 
 else if(screenIndex == 2){
 
+  luke[0] -= 50*refreshRatio;
+  var pressed = keyMap&keys[inputs.JUMP];
+  if ( pressed && !luke[1]) {
+    luke[0] += 10;
+  }
+  if (luke[0]<=0) {
+    luke[0] = 0;
+  }
+  if (luke[0] >= 100) {
+    console.log('win');
+  }
+  luke[1] = pressed;
+
+  graphics.fillStyle = '#fff';
+
+  graphics.fillRect(50, 200-luke[0], 10, luke[0]);
+
 }

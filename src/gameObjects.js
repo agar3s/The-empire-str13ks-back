@@ -1,12 +1,12 @@
 
 const GAME_TIME = 18;
-const NEXT_SCREEN = 9;
+const NEXT_SCREEN = 2;
 const FLOOR = 120;
 const MAX_Y_ACCELERATION = 5;
 const gravity = 18;
 
 // game data
-var screenIndex = 9;
+var screenIndex = 2;
 var lives = 0;
 var level = 1;
 
@@ -20,7 +20,7 @@ var luke = [100, FLOOR, 0, 0, false];
 
 // main screen data
 var countdown = 3;
-var nextScreen = 9;
+var nextScreen = 0;
 var refreshRatio = 0;
 
 // objects translated in game 1
@@ -47,7 +47,7 @@ function changeScreen(screen) {
     generateObstacles(12, 200, 0.2);
     
   }else if(screen == 2){
-    luke = [0, FLOOR, 0, 0, false];
+    luke = [0, false, 0, 0, false];
   }else if(screen == 3){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 4){
