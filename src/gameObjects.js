@@ -3,7 +3,7 @@ const GAME_TIME = 18;
 const NEXT_SCREEN = 1;
 const FLOOR = 120;
 const MAX_Y_ACCELERATION = 5;
-const gravity = 17;
+const gravity = 18;
 
 // game data
 var screenIndex = 0;
