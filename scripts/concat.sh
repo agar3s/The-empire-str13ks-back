@@ -56,6 +56,9 @@ cat src/canvasRender.js
 #cat src/levelUpScene.js
 
 cat src/gameObjects.js
+# mechanics
+cat src/mechanics/gravity.js
+
 cat src/gameloop_open.js
 
 cat src/scenes/mainScreen.js

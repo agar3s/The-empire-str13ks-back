@@ -10,14 +10,14 @@ var currentTick = 0;
 var tickEvent = false;
 var beatEvent = false;
 
-var screenIndex = 0;
+var screenIndex = 1;
 var lives = 0;
 var level = 1;
 
 function loop(time) {
   if(DEBUG){}
   var dt = time - timeEnd;
-  var refreshRatio = dt/1000;
+  refreshRatio = dt/1000;
   timeEnd = time;
   
   // metronome
