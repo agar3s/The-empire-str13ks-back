@@ -19,10 +19,12 @@ else if(screenIndex == 2){
   }
   if (luke[0] >= 100) {
     console.log('win');
+    graphics.fillStyle = '#f66';
+  }else {
+    graphics.fillStyle = '#fff';
   }
   luke[1] = pressed;
 
-  graphics.fillStyle = '#fff';
 
   graphics.fillRect(50, 200-luke[0], 10, luke[0]);
 

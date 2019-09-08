@@ -1,12 +1,12 @@
 
 const GAME_TIME = 18;
-const NEXT_SCREEN = 2;
+const NEXT_SCREEN = 0;
 const FLOOR = 120;
 const MAX_Y_ACCELERATION = 5;
 const gravity = 18;
 
 // game data
-var screenIndex = 2;
+var screenIndex = 0;
 var lives = 0;
 var level = 1;
 
@@ -25,7 +25,13 @@ var refreshRatio = 0;
 
 // objects translated in game 1
 var obstacles = [];
+var laser = [];
+var enemies = [];
 
+var spawnTime = 0.5;
+
+
+var levels = [1, 2, 4, 9, 13];
 // press counter game 2
 
 function generateObstacles(n, distance, probs) {
@@ -41,7 +47,7 @@ function changeScreen(screen) {
   nextScreen = 0;
   if (screen == 0) {
     countdown = 3;
-    nextScreen = NEXT_SCREEN || (~~(Math.random()*13) + 1);
+    nextScreen = NEXT_SCREEN || levels[~~(Math.random()*levels.length)];
   }else if(screen == 1){
     luke = [100, FLOOR, 0, 0, false];
     generateObstacles(12, 200, 0.2);
@@ -51,7 +57,7 @@ function changeScreen(screen) {
   }else if(screen == 3){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 4){
-    luke = [0, FLOOR, 0, 0, false];
+    luke = [0, Math.random()>0.5?0.5:-0.5, 0, 0, 0];
   }else if(screen == 5){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 6){
@@ -71,6 +77,8 @@ function changeScreen(screen) {
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 13){
     luke = [0, FLOOR, 0, 0, false];
+    enemies = [];
+    laser = [];
   }
   screenIndex = screen;
 }
