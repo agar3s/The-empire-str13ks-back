@@ -28,14 +28,15 @@ else if(screenIndex == 13) {
     laser.push([160, -(luke[0] - 0.5)*2]);
   }
   // update refresh ratio and coldowns
+  luke[2] -= refreshRatio;
+  luke[1] = fire;
   luke[3] -= refreshRatio; 
   if(luke[3]<=0) {
     luke[3] = 0;
   }else if(luke[3]>=1) {
     luke[3] = 1;
   }
-  graphics.fillStyle = luke[3]<0.7?'#fff':'#f66';
-
+  
   // spawn enemy
   if (spawnTime< 0) {
     spawnTime = 0.6;
@@ -67,8 +68,7 @@ else if(screenIndex == 13) {
 
   }
 
-  luke[2] -= refreshRatio;
-  luke[1] = fire;
+  graphics.fillStyle = luke[3]<0.7?'#fff':'#f66';
   graphics.fillRect(110, 200, luke[3]*100, 20);
 
   // draw laser

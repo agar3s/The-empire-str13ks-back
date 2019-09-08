@@ -1,6 +1,6 @@
 
 const GAME_TIME = 18;
-const NEXT_SCREEN = 0;
+const NEXT_SCREEN = 12;
 const FLOOR = 120;
 const MAX_Y_ACCELERATION = 5;
 const gravity = 18;
@@ -31,8 +31,12 @@ var enemies = [];
 var spawnTime = 0.5;
 
 
-var levels = [1, 2, 4, 9, 13];
+var levels = [1, 2, 4, 7, 9, 10, 13];
 // press counter game 2
+var balance = 0;
+var angle = 0;
+var balance_2 = 0;
+var angle_2 = 0;
 
 function generateObstacles(n, distance, probs) {
   obstacles = [];
@@ -62,19 +66,24 @@ function changeScreen(screen) {
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 6){
     luke = [0, FLOOR, 0, 0, false];
-  }else if(screen == 7){
-    luke = [0, FLOOR, 0, 0, false];
+  }else if(screen == 7) {
+    enemies = [];
+    for (var i = 0; i < 6; i++) {
+      enemies.push([Math.PI/3*i, 0, 0, -20*i]);
+    }
+    laser = [];
+    luke = [160, FLOOR, 0, 0, 0];
   }else if(screen == 8){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 9){
     luke = [1, FLOOR, 0, 0, false];
     generateObstacles(30, 250, 0.5);
   }else if(screen == 10){
-    luke = [0, FLOOR, 0, 0, false];
+    luke = [0, false, 0, 0, false];
   }else if(screen == 11){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 12){
-    luke = [0, FLOOR, 0, 0, false];
+    luke = [0, FLOOR, 0, 0, true];
   }else if(screen == 13){
     luke = [0, FLOOR, 0, 0, false];
     enemies = [];
