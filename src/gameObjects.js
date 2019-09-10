@@ -1,6 +1,6 @@
 
 const GAME_TIME = 18;
-const NEXT_SCREEN = 12;
+const NEXT_SCREEN = 6;
 const FLOOR = 120;
 const MAX_Y_ACCELERATION = 5;
 const gravity = 18;
@@ -31,12 +31,29 @@ var enemies = [];
 var spawnTime = 0.5;
 
 
-var levels = [1, 2, 4, 7, 9, 10, 13];
+var levels = [1, 2, 4, 7, 9, 10, 12, 13];
 // press counter game 2
 var balance = 0;
 var angle = 0;
 var balance_2 = 0;
 var angle_2 = 0;
+
+// 9 X 7 maze
+const mazeData = '531311959'+
+                 '69c7ac6ac'+
+                 '5a639c73a'+
+                 '433be6339'+
+                 '49595b59c'+
+                 'ccce69c6a'+
+                 'c6233a633';
+var maze = [];
+var maze_size = 24;
+for (var i = 0; i < mazeData.length; i++) {
+  var x = i%9;
+  var y = ~~(i/9);
+  if(x==0) maze.push([]);
+  maze[y].push(15-parseInt(mazeData[i], 16));
+}
 
 function generateObstacles(n, distance, probs) {
   obstacles = [];
@@ -65,7 +82,8 @@ function changeScreen(screen) {
   }else if(screen == 5){
     luke = [0, FLOOR, 0, 0, false];
   }else if(screen == 6){
-    luke = [0, FLOOR, 0, 0, false];
+    laser = [];
+    luke = [0, 0, false, 0, 0];
   }else if(screen == 7) {
     enemies = [];
     for (var i = 0; i < 6; i++) {
@@ -81,7 +99,7 @@ function changeScreen(screen) {
   }else if(screen == 10){
     luke = [0, false, 0, 0, false];
   }else if(screen == 11){
-    luke = [0, FLOOR, 0, 0, false];
+    luke = [0, 6, false, false, false, false];
   }else if(screen == 12){
     luke = [0, FLOOR, 0, 0, true];
   }else if(screen == 13){

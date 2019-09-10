@@ -10,9 +10,9 @@ else if(screenIndex == 12){
   balance = Math.sin(angle)*Math.PI*0.35;
 
   if (keyMap&keys[inputs.JUMP] && luke[4]) {
-    luke[3] = -MAX_Y_ACCELERATION;
+    luke[3] = -0.2*MAX_Y_ACCELERATION;
     luke[4] = false;
-    luke[2] = -balance*5;
+    luke[2] = -balance*4;
   }
 
 
